@@ -1,0 +1,132 @@
+3) Dopo avere nuovamente fatto il login, senza spostarsi dalla propria HOME directory, visualizzare il contenuto
+della directory / (root)
+ls /
+
+4) Sempre senza spostarsi dalla propria HOME directory, verificare il contenuto del file /etc/passwd
+cat /etc/passwd
+
+5) Visualizzare quale è la directory corrente
+pwd
+
+6) Cambiare la directory corrente spostandosi in /etc
+cd /etc
+
+7) Senza spostarsi dalla directory /etc, visualizzare quale è la propria HOME directory
+echo $HOME
+
+8) Visualizzare nuovamente il file passwd
+cat passwd
+
+9) Provare a visualizzare il file shadow
+cat shadow
+
+10) Tornare nella propria HOME directory
+cd
+
+11) Visualizzare le informazioni relative a UID e GID dell’utente corrente
+id
+
+12) Visualizzare i processi della sessione interattiva corrente, sia nella forma sintetica che nelle forme più estese
+ps
+ps -f
+
+13) Visualizzare tutti i processi attivi nel sistema
+ps -e
+
+14) Verificare il manuale di almeno uno dei comandi usati finora
+man ps
+
+15) Verificare dove si trova il file eseguibile di almeno uno dei comandi usati finora
+which ps
+
+16) Verificare anche dove si trova il suo manuale
+whereis ps
+
+17) Invocare almeno un’altra shell e verificare i processi attivi e in particolare la relazione padre-figlio
+sh 
+ps -fl
+
+18) Dopo aver verificato di essere nella propria HOME directory, con l’editor vi (o comunque un editor testuale) creare un file che abbia un nome molto lungo; si scrivano almeno alcune linee in tale file.
+
+
+19) Sempre nella home directory, con l’editor vi creare un file che abbia un nome che contenga più occorrenze delcarattere ‘.’; come prima, si scrivano almeno alcune linee in tale file.
+
+
+20) Sempre nella home directory, con l’editor vi creare un file che abbia un nome che inizi con il carattere ‘.’; come prima, si scrivano almeno alcune linee in tale file; si verifichi quindi il contenuto della home directory, forzando
+la visualizzazione anche dei file il cui nome inizia con ‘.’
+ls -A
+ls -a
+
+21) Cambiare la directory corrente spostandosi in /home e visualizzare la sottogerarchia che parte da lì facendo vedere tutti i dettagli, anche sul ‘tipo’ dei file
+cd /home
+ls -RlF
+
+22) Rimanendo in /home, visualizzare il contenuto della propria HOME directory partendo dal file modificato più recentemente; aggiornare la data di modifica di uno dei file meno recenti e quindi verificare l’effetto ripetendo
+la visualizzazione della propria HOME directory
+ls -tl /home/nomerelativo semplice mia HOME dir
+touch /home/relsemplice HOMDIR/relsemplicefileHOME
+
+23) Rimanendo in /home, visualizzare il contenuto della propria HOME directory in ordine alfabetico inverso
+ls -r
+
+24) Rimanendo in /home, visualizzare le informazioni relative al file che rappresenta la propria HOME directory
+ls -ld /home/nomerel_homeDIR
+
+25) Ritornare nella propria HOME directory e creare con l’editor vi alcuni file per verificare le regole del pattern matching sui nomi dei file
+cd 
+vi nonno 
+
+26) Verificare le sostituzioni del pattern matching invocando una shell che mostri appunto tali sostituzioni
+sh -x
+ls *p
+
+27) Verificare il pattern matching anche con il comando per visualizzare sullo standard output delle stringhe
+echo *p?
+
+28) Verificare i diritti di accesso dei file /etc/passwd e /etc/shadow
+ls -l /etc/passwd
+ls -l /etc/shadow
+
+29) Eliminare, per l’utente corrente, il diritto di scrittura ad uno dei propri file e verificare il comportamento dell’editor vi su quel file
+chmod u-w nonno
+vi nonno
+
+30) Eliminare anche il diritto di lettura sullo stesso file e provare a visualizzare il file
+chmod u-r nonno
+vi nonno --> ottengo permission denied
+
+31) Usando la notazione ottale, ripristinare per l’utente corrente sia il diritto di lettura che quello di scrittura, togliendo qualunque altro diritto a gruppo e altri
+chmod 600 nonno
+
+32) Creare con l’editor vi alcuni file e quindi cancellarli facendo attenzione a che il S.O. vi chieda la conferma
+rm -i nomefile
+
+33) Creare una sottodirectory nella propria HOME directory; verificare il numero di link della sottodirectory creata; creare con l’editor vi almeno un file in tale sottodirectory; usare i nomi assoluti dei vari link della sottodirectory
+creata per visualizzarne il contenuto; cancellare la sottodirectory
+mkdir nomedirectory 
+ls -ld nomedirevtory
+vi nonnalella
+rmdir nomedirectory
+
+34) Creare nuovamente una sottodirectory e creare in tale sottodirectory un link HARDWARE ad un file presente nella propria HOME directory e verificare sia il numero di link che l’i-number sia del link e che del nome
+‘originale’; modificare il file utilizzando il link e verificare la modifica usando il nome ‘originale’ del file
+mkdir Nichi
+ln sorgente [destinazione] --> ln /home/nicole/nonno /home/nicole/Nichi
+ls -li nonno --> corrente
+ls -li /home/nicole/nonno --> sorgente
+vi nonno
+cat nonno
+
+35) Creare una copia, sempre nella sottodirectory precedentemente creata, di uno file presente nella propria HOME directory e verificare sia il numero di link che l’i-number del file destinazione e del file ‘sorgente’
+cp /home/nicole/nonnalella /home/nicole/Nichi
+ls -li sorgente
+ls -li destinazione
+
+36) Modificare la copia e verificare che la modifica non abbia avuto effetto sul file ‘sorgente'
+vi nonnalella
+cat nonnalella
+
+37) verifica i diritti sulle directory: aggiungi file, tolgo il lettura e vedo cosa succede, lo rimetto 
+tolgo il w e lo rimetto
+tolgo la x e rimetto 
+
